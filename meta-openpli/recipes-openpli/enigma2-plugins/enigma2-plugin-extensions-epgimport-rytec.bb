@@ -14,11 +14,11 @@ RCONFLICTS_${PN} = "enigma2-plugin-extensions-xmltvimport-rytec"
 
 PACKAGES = "${PN}"
 
-FILES_${PN} = "/etc/epgimport"
+FILES_${PN} = "${sysconfdir}/epgimport"
 
 do_install() {
-	install -d ${D}/etc/epgimport
-	install -m 644 ${S}/rytec.sources.xml.${PV} ${D}/etc/epgimport/rytec.sources.xml
+	install -d ${D}${sysconfdir}/epgimport
+	install -m 644 ${S}/rytec.sources.xml.${PV} ${D}${sysconfdir}/epgimport/rytec.sources.xml
 }
 
 SRC_URI[sha256sum] = "8f62846c025f70be68e4b40c64d57ee54b33a7ec7bd936e8ff725c2548603588"
